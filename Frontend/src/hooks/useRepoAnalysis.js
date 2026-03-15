@@ -24,7 +24,7 @@ const useRepoAnalysis = () => {
 
     try {
       // Start the API call but don't await it immediately
-      const apiPromise = axios.post('http://localhost:5000/api/repo/analyze', { url });
+      const apiPromise = axios.post('https://repolense.onrender.com/api/repo/analyze', { url });
 
       // Step 1: Connecting
       await delay(1200);
@@ -66,7 +66,7 @@ const useRepoAnalysis = () => {
     setChatError(null);
     
     try {
-      const response = await axios.post('http://localhost:5000/api/repo/chat', {
+      const response = await axios.post('https://repolense.onrender.com/api/repo/chat', {
         repoContext: {
           name: repoData.repoInfo.name,
           description: repoData.repoInfo.description,
